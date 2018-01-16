@@ -81,8 +81,7 @@ public class BooksController {
         request.setAttribute("booksFound", booksService.findAllBooksByBookName(book.getBook_name()));
         if (booksService.findAllBooksByBookName(book.getBook_name()).isEmpty()) {
             request.setAttribute("mode", "MODE_NOTHING_FOUND");
-        }
-        else {
+        } else {
             request.setAttribute("mode", "MODE_FOUND");
         }
         return "index";

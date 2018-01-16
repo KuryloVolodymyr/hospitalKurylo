@@ -12,34 +12,34 @@ public class BooksService {
 
     private BooksRepository booksRepository;
 
-    public BooksService(BooksRepository booksRepository){
+    public BooksService(BooksRepository booksRepository) {
         this.booksRepository = booksRepository;
     }
 
-    public List<Books> findAllBooks(){
+    public List<Books> findAllBooks() {
         List<Books> books = new ArrayList<Books>();
-        for(Books book:  booksRepository.findAll())
+        for (Books book : booksRepository.findAll())
             books.add(book);
         return books;
     }
 
-    public List<Books> findAllBooksByBookName(String book_name){
+    public List<Books> findAllBooksByBookName(String book_name) {
         List<Books> booksByName = new ArrayList<Books>();
-        for(Books book:  booksRepository.findAllBybookName(book_name))
+        for (Books book : booksRepository.findAllBybookName(book_name))
             booksByName.add(book);
         return booksByName;
     }
 
 
-    public void saveBook(Books book){
+    public void saveBook(Books book) {
         booksRepository.save(book);
     }
 
-    public void deleteBook(Long id){
+    public void deleteBook(Long id) {
         booksRepository.delete(id);
     }
 
-    public Books findBook(Long id){
+    public Books findBook(Long id) {
         return booksRepository.findOne(id);
     }
 
